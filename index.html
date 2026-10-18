@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Mosque Finder — Explore World's Iconic Masjids | mosque.sakib.bond</title>
+  <meta name="description" content="Discover and explore the world's most magnificent and sacred mosques. Capacities, history, prayer facilities, and directions on mosque.sakib.bond." />
+  <meta name="keywords" content="mosque finder, masjid directory, Mecca, Medina, Al-Aqsa, Sheikh Zayed Mosque, Blue Mosque, Islamic architecture, mosque.sakib.bond" />
+  <meta name="author" content="mosque.sakib.bond" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d4f4f" />
+  <link rel="canonical" href="https://mosque.sakib.bond/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Global Mosque Finder — mosque.sakib.bond" />
+  <meta property="og:description" content="Explore world-famous mosques, historical architecture, prayer facilities, and community hubs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mosque.sakib.bond/" />
+  <meta property="og:site_name" content="Mosque Finder" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Global Mosque Finder — mosque.sakib.bond" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Global Mosque Finder",
+    "url": "https://mosque.sakib.bond",
+    "description": "Global directory and guide to the world's most iconic mosques and Islamic community spaces."
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-base: #061e1e;
+      --bg-surface: #0a2e2e;
+      --bg-card: #0f3d3d;
+      --bg-card-hover: #144d4d;
+      --teal-primary: #0d4f4f;
+      --teal-bright: #14b8a6;
+      --teal-light: #5eead4;
+      --gold-primary: #c9a84c;
+      --gold-bright: #fbbf24;
+      --text-main: #f0fdfa;
+      --text-muted: #99f6e4;
+      --text-dim: #5eead4;
+      --border-color: rgba(201, 168, 76, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-card: 0 10px 30px -8px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f0fdfa;
+      --bg-surface: #ffffff;
+      --bg-card: #ccfbf1;
+      --bg-card-hover: #99f6e4;
+      --teal-primary: #0f766e;
+      --teal-bright: #0d9488;
+      --gold-primary: #b45309;
+      --gold-bright: #d97706;
+      --text-main: #134e4a;
+      --text-muted: #115e59;
+      --text-dim: #042f2e;
+      --border-color: rgba(180, 83, 9, 0.2);
+      --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Geometric Background */
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(20, 184, 166, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Halalspark Ad Container */
+    .halalspark-ad-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 18px 0;
+      position: relative;
+      z-index: 10;
+    }
+    .halalspark-ad {
+      border: 1px dashed var(--gold-primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(13, 79, 79, 0.9), rgba(6, 30, 30, 0.95));
+      color: var(--gold-bright);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      padding: 10px;
+      text-align: center;
+    }
+    .halalspark-ad .ad-badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      background: rgba(201, 168, 76, 0.15);
+      border-radius: 4px;
+      margin-bottom: 4px;
+      color: var(--teal-light);
+    }
+
+    /* Header */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .navbar {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--gold-bright);
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .brand i { font-size: 24px; color: var(--teal-bright); }
+    .brand span { font-size: 12px; display: block; color: var(--text-muted); font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .theme-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--gold-bright);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .theme-btn:hover { background: var(--bg-card-hover); border-color: var(--gold-bright); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 44px 24px 36px;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(26px, 4vw, 42px);
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 24px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .stat-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+    }
+    .stat-badge strong { color: var(--gold-bright); font-size: 16px; display: block; }
+
+    /* Search & Filter Bar */
+    .search-filter-section {
+      max-width: 1200px;
+      margin: -24px auto 30px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .search-box-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--gold-primary);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .search-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-input-wrap {
+      flex: 1;
+      position: relative;
+      min-width: 260px;
+    }
+    .search-input-wrap i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal-bright);
+    }
+    .search-input-wrap input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 12px 18px 12px 44px;
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+    }
+    .search-input-wrap input:focus { border-color: var(--gold-primary); }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .filter-pill:hover, .filter-pill.active {
+      background: var(--gold-primary);
+      color: #000;
+      border-color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    /* Mosque Cards Grid */
+    .mosque-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+      position: relative;
+      z-index: 5;
+    }
+    .mosque-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .mosque-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-bright);
+    }
+    .card-banner {
+      height: 140px;
+      background: linear-gradient(135deg, #0d4f4f, #061e1e);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: var(--gold-bright);
+      font-size: 40px;
+    }
+    .card-banner .category-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-bright);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    .card-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      color: var(--gold-bright);
+    }
+    .card-location {
+      font-size: 13px;
+      color: var(--teal-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta-row {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .btn-detail {
+      background: var(--teal-primary);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-bright);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+      width: 100%;
+      text-align: center;
+      margin-top: 6px;
+    }
+    .btn-detail:hover { background: var(--gold-primary); color: #000; }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 40px 24px 24px;
+      margin-top: auto;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+    .footer-links a { color: var(--text-muted); text-decoration: none; cursor: pointer; }
+    .footer-links a:hover { color: var(--gold-bright); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center;
+      z-index: 1000; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--bg-surface); border: 1px solid var(--gold-primary);
+      border-radius: var(--radius-lg); width: 100%; max-width: 620px; max-height: 85vh;
+      overflow-y: auto; padding: 28px; position: relative; color: var(--text-main);
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; background: transparent;
+      border: none; color: var(--gold-bright); font-size: 18px; cursor: pointer;
+    }
+    .modal-box h3 {
+      font-family: 'Cinzel', serif; color: var(--gold-bright); font-size: 20px;
+      margin-bottom: 14px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;
+    }
+    .modal-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.7; }
+    .contact-input {
+      width: 100%; background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm); padding: 10px 14px; color: var(--text-main);
+      margin-bottom: 12px; outline: none;
+    }
+    .contact-input:focus { border-color: var(--gold-primary); }
+    .btn-submit {
+      background: var(--gold-primary); color: #000; font-weight: 700;
+      padding: 10px 20px; border-radius: var(--radius-sm); border: none; cursor: pointer;
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 600px;
+      margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--gold-primary);
+      border-radius: var(--radius-md); padding: 16px 20px; display: flex;
+      align-items: center; justify-content: space-between; gap: 16px; z-index: 999;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .cookie-banner p { font-size: 13px; color: var(--text-muted); margin: 0; }
+    .cookie-btn {
+      background: var(--gold-primary); color: #000; font-weight: 700;
+      font-size: 12px; padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .mosque-grid { grid-template-columns: 1fr; }
+      .search-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <a href="/" class="brand">
+        <i class="fas fa-mosque"></i>
+        <div>
+          Mosque Finder
+          <span>mosque.sakib.bond</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <button class="theme-btn" onclick="toggleTheme()" title="Toggle Theme">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HALALSPARK AD: Header Banner 728x90 -->
+  <div class="halalspark-ad-container">
+    <div class="halalspark-ad" data-ad-slot="header-banner" style="width:728px;max-width:96%;height:90px;">
+      <span class="ad-badge">Halalspark Ad Network</span>
+      <div><i class="fas fa-kaaba" style="margin-right:6px;"></i> Hajj & Umrah Packages from Shariah-Compliant Travel Providers — mosque.sakib.bond</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Houses of Allah Around the Globe</h1>
+    <p>"The mosques of Allah are only to be maintained by those who believe in Allah and the Last Day and establish prayer..." — Surah At-Tawbah (9:18)</p>
+    <div class="hero-stats">
+      <div class="stat-badge"><strong>20+</strong> Iconic Mosques</div>
+      <div class="stat-badge"><strong>15+</strong> Countries Represented</div>
+      <div class="stat-badge"><strong>10M+</strong> Global Worshipper Capacity</div>
+    </div>
+  </section>
+
+  <!-- Search & Filters -->
+  <section class="search-filter-section">
+    <div class="search-box-card">
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search by mosque name, city, or country..." onkeyup="filterMosques()">
+        </div>
+      </div>
+      <div class="filter-pills">
+        <span style="font-size:12px;color:var(--text-muted);font-weight:600;">Category:</span>
+        <button class="filter-pill active" onclick="setCategory('all', this)">All</button>
+        <button class="filter-pill" onclick="setCategory('Holiest', this)">Holiest Sanctuaries</button>
+        <button class="filter-pill" onclick="setCategory('Megastructure', this)">Megastructures</button>
+        <button class="filter-pill" onclick="setCategory('Historic', this)">Historic Heritage</button>
+        <button class="filter-pill" onclick="setCategory('Modern', this)">Modern Architecture</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mosque Grid -->
+  <main class="mosque-grid" id="mosqueGrid">
+    <!-- Populated by JavaScript -->
+  </main>
+
+  <!-- HALALSPARK AD: In-Content 336x280 -->
+  <div class="halalspark-ad-container">
+    <div class="halalspark-ad" data-ad-slot="in-content" style="width:336px;max-width:96%;height:220px;">
+      <span class="ad-badge">Halalspark Ad Network</span>
+      <div><i class="fas fa-hand-holding-heart" style="font-size:24px;margin-bottom:8px;display:block;"></i> Support Masjid Construction & Community Centers Worldwide</div>
+    </div>
+  </div>
+
+  <!-- HALALSPARK AD: Footer Banner 728x90 -->
+  <div class="halalspark-ad-container">
+    <div class="halalspark-ad" data-ad-slot="footer-banner" style="width:728px;max-width:96%;height:90px;">
+      <span class="ad-badge">Halalspark Ad</span>
+      <div>Islamic Architectural Tours & Heritage Travel — Verified Halal Operators</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a onclick="openModal('privacyModal')">Privacy Policy</a>
+      <a onclick="openModal('termsModal')">Terms of Service</a>
+      <a onclick="openModal('aboutModal')">About Us</a>
+      <a onclick="openModal('contactModal')">Contact Us</a>
+      <a onclick="openModal('disclaimerModal')">Disclaimer</a>
+    </div>
+    <div class="footer-copy">
+      Copyright © 2026 <a href="https://mosque.sakib.bond" style="color:var(--gold-bright);text-decoration:none;">mosque.sakib.bond</a> — All Rights Reserved. Powered by Halalspark Ads.
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('detailModal')"><i class="fas fa-times"></i></button>
+      <h3 id="modalMosqueName">Mosque Details</h3>
+      <p id="modalMosqueMeta" style="color:var(--teal-light);font-weight:600;"></p>
+      <p id="modalMosqueHistory"></p>
+      <h4 style="color:var(--gold-bright);margin-bottom:8px;">Facilities & Features:</h4>
+      <ul id="modalMosqueFacilities" style="padding-left:20px;font-size:13px;color:var(--text-muted);margin-bottom:14px;"></ul>
+      <p style="font-size:12px;color:var(--text-dim);font-style:italic;">Location verified on mosque.sakib.bond directory.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('privacyModal')"><i class="fas fa-times"></i></button>
+      <h3>Privacy Policy</h3>
+      <p>Welcome to <strong>mosque.sakib.bond</strong>. We value your privacy and comply with GDPR and Islamic data protection ethics.</p>
+      <p><strong>Halalspark Advertising:</strong> We display family-friendly, Shariah-compliant advertisements via Halalspark. Third-party advertisers may set cookies to deliver relevant ethical ads.</p>
+      <p>Contact: admin@mosque.sakib.bond</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('termsModal')"><i class="fas fa-times"></i></button>
+      <h3>Terms of Service</h3>
+      <p>The information on <strong>mosque.sakib.bond</strong> is curated for travel, prayer, and educational guidance. Visiting hours and congregation timings should be reconfirmed locally prior to visits.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="aboutModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('aboutModal')"><i class="fas fa-times"></i></button>
+      <h3>About Mosque Finder</h3>
+      <p>Our platform chronicles the history, capacity, and architectural beauty of the world's most cherished masjids, promoting spiritual unity and architectural appreciation.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('contactModal')"><i class="fas fa-times"></i></button>
+      <h3>Contact Us</h3>
+      <form onsubmit="event.preventDefault(); alert('Message received! JazakAllahu Khair.'); closeModal('contactModal');">
+        <input type="text" class="contact-input" placeholder="Your Name" required>
+        <input type="email" class="contact-input" placeholder="Your Email" required>
+        <textarea class="contact-input" rows="4" placeholder="Your Message..." required></textarea>
+        <button type="submit" class="btn-submit">Submit Message</button>
+      </form>
+      <p style="margin-top:10px;font-size:12px;">Email: admin@mosque.sakib.bond</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="disclaimerModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('disclaimerModal')"><i class="fas fa-times"></i></button>
+      <h3>Disclaimer</h3>
+      <p>All mosque capacities, historical dates, and facilities are compiled from public records and architectural archives. Timings may fluctuate on Eid and Ramadan.</p>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p><i class="fas fa-cookie-bite" style="color:var(--gold-bright);margin-right:6px;"></i> We use cookies to customize your browsing experience and display Halalspark ethical ads.</p>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept & Continue</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const mosques = [
+      {
+        id: 1,
+        name: "Al-Masjid al-Haram",
+        city: "Mecca",
+        country: "Saudi Arabia",
+        capacity: "4,000,000",
+        year: "638 CE",
+        category: "Holiest",
+        icon: "fa-kaaba",
+        desc: "The Great Mosque of Mecca surrounds the Holy Kaaba, the Qibla toward which all Muslims face. It is the largest and holiest mosque in Islam.",
+        facilities: ["Kaaba & Mataf Courtyard", "Well of Zamzam", "Safa and Marwa Sa'i Gallery", "24/7 Medical Units", "Full Wheelchair Accessibility"]
+      },
+      {
+        id: 2,
+        name: "Al-Masjid an-Nabawi",
+        city: "Medina",
+        country: "Saudi Arabia",
+        capacity: "1,000,000",
+        year: "622 CE",
+        category: "Holiest",
+        icon: "fa-mosque",
+        desc: "The Prophet's Mosque established by Prophet Muhammad ﷺ. Home to the iconic Green Dome and the sacred Rawdah ash-Sharifah.",
+        facilities: ["Sacred Rawdah ash-Sharifah", "Automated Giant Umbrellas", "Scholarly Library", "Extensive Ablution Centers", "Air-conditioned Basements"]
+      },
+      {
+        id: 3,
+        name: "Al-Aqsa Mosque",
+        city: "Jerusalem",
+        country: "Palestine",
+        capacity: "500,000",
+        year: "705 CE",
+        category: "Holiest",
+        icon: "fa-monument",
+        desc: "The third holiest sanctuary in Islam and the first Qibla of Muslims. Site of the miraculous Isra and Mi'raj night journey.",
+        facilities: ["Qibli Mosque Hall", "Dome of the Rock (Qubbat as-Sakhrah)", "Ancient Olive Courtyards", "Extensive Islamic Manuscript Library"]
+      },
+      {
+        id: 4,
+        name: "Sultan Ahmed Mosque (Blue Mosque)",
+        city: "Istanbul",
+        country: "Turkey",
+        capacity: "10,000",
+        year: "1616 CE",
+        category: "Historic",
+        icon: "fa-archway",
+        desc: "Renowned for six minarets and over 20,000 hand-painted blue Iznik ceramic tiles. A masterpiece of Ottoman classical architecture.",
+        facilities: ["Historic Ottoman Courtyard", "Visitor Center with Free Guides", "Ablution Courtyard", "Evening Lighting Displays"]
+      },
+      {
+        id: 5,
+        name: "Sheikh Zayed Grand Mosque",
+        city: "Abu Dhabi",
+        country: "United Arab Emirates",
+        capacity: "40,000",
+        year: "2007 CE",
+        category: "Megastructure",
+        icon: "fa-landmark",
+        desc: "Built with pristine Macedonian marble, 82 white domes, 24-carat gold gilded chandeliers, and the world's largest hand-knotted carpet.",
+        facilities: ["World's Largest Hand-woven Carpet", "Gilded Swarovski Chandeliers", "Reflective Water Basins", "Comprehensive Cultural Library"]
+      },
+      {
+        id: 6,
+        name: "Hassan II Mosque",
+        city: "Casablanca",
+        country: "Morocco",
+        capacity: "105,000",
+        year: "1993 CE",
+        category: "Megastructure",
+        icon: "fa-water",
+        desc: "Perched dramatically over the Atlantic Ocean with a 210-meter minaret featuring a laser pointing toward Mecca. Showcases exquisite Moroccan zellij tilework.",
+        facilities: ["Retractable Heated Roof", "Ocean-view Glass Flooring", "Hammam & Turkish Baths", "Madrasa & Conference Halls"]
+      },
+      {
+        id: 7,
+        name: "Faisal Mosque",
+        city: "Islamabad",
+        country: "Pakistan",
+        capacity: "300,000",
+        year: "1986 CE",
+        category: "Modern",
+        icon: "fa-mountain",
+        desc: "Nestled at the foothills of the Margalla Hills, shaped like a majestic Bedouin tent with four towering Turkish-style minarets.",
+        facilities: ["Bedouin Tent Architectural Hall", "International Islamic University Campus", "Vast Open Marble Plazas", "Extensive Courtyards"]
+      },
+      {
+        id: 8,
+        name: "Istiqlal Mosque",
+        city: "Jakarta",
+        country: "Indonesia",
+        capacity: "200,000",
+        year: "1978 CE",
+        category: "Megastructure",
+        icon: "fa-building-columns",
+        desc: "The national mosque of Indonesia and the largest mosque in Southeast Asia, commemorating Indonesian independence.",
+        facilities: ["Monolithic 45-meter Dome", "Seven Floor Prayer Halls", "Eco-Friendly Solar Panels", "Interfaith Harmony Tunnel"]
+      },
+      {
+        id: 9,
+        name: "Baitul Mukarram National Mosque",
+        city: "Dhaka",
+        country: "Bangladesh",
+        capacity: "40,000",
+        year: "1968 CE",
+        category: "Modern",
+        icon: "fa-cube",
+        desc: "Designed to resemble the Holy Kaaba in Mecca, this cube-shaped architectural marvel stands at the heart of Dhaka.",
+        facilities: ["Multi-tiered Prayer Terraces", "Islamic Foundation Library", "Extensive Book Fair Complex", "Large Eid Congregation Grounds"]
+      },
+      {
+        id: 10,
+        name: "Badshahi Mosque",
+        city: "Lahore",
+        country: "Pakistan",
+        capacity: "100,000",
+        year: "1673 CE",
+        category: "Historic",
+        icon: "fa-fort-awesome",
+        desc: "Commissioned by Mughal Emperor Aurangzeb, crafted entirely from carved red sandstone with white marble inlay.",
+        facilities: ["Vast Mughal Courtyard", "Relics Museum of the Prophet ﷺ", "Historic Minarets with Panoramic Views", "Intricate Marble Frescoes"]
+      },
+      {
+        id: 11,
+        name: "Grand Mosque of Paris",
+        city: "Paris",
+        country: "France",
+        capacity: "1,500",
+        year: "1926 CE",
+        category: "Historic",
+        icon: "fa-tree",
+        desc: "Founded in the Latin Quarter in Mudéjar style. Famous for shielding persecuted refugees during World War II.",
+        facilities: ["Andalusian Courtyard Gardens", "Traditional Tea Room & Hammam", "Islamic Library", "Halal Restaurant"]
+      },
+      {
+        id: 12,
+        name: "East London Mosque & London Muslim Centre",
+        city: "London",
+        country: "United Kingdom",
+        capacity: "7,000",
+        year: "1985 CE",
+        category: "Modern",
+        icon: "fa-city",
+        desc: "One of the largest mosques in Europe and the first in the UK allowed to broadcast the Adhan using external loudspeakers.",
+        facilities: ["Community Advice & Welfare Center", "Primary & Secondary Schools", "Conference & Wedding Halls", "Zakat Distribution Office"]
+      },
+      {
+        id: 13,
+        name: "Tokyo Camii & Turkish Cultural Center",
+        city: "Tokyo",
+        country: "Japan",
+        capacity: "1,200",
+        year: "2000 CE",
+        category: "Modern",
+        icon: "fa-circle-dot",
+        desc: "The largest mosque in Japan, constructed in classical Ottoman style using marble and stone imported directly from Turkey.",
+        facilities: ["Ottoman Cultural Exhibition Hall", "Halal Japanese Supermarket", "Wedding Ceremony Hall", "Intercultural Workshops"]
+      },
+      {
+        id: 14,
+        name: "Islamic Cultural Center of New York",
+        city: "New York",
+        country: "United States",
+        capacity: "4,000",
+        year: "1991 CE",
+        category: "Modern",
+        icon: "fa-globe",
+        desc: "Located on Manhattan's Upper East Side, oriented precisely 29 degrees northeast to point toward Mecca.",
+        facilities: ["Skylit Geodesic Dome", "Community Classroom Wing", "Interfaith Center", "Ablution Facilities"]
+      },
+      {
+        id: 15,
+        name: "Nasir al-Mulk (Pink Mosque)",
+        city: "Shiraz",
+        country: "Iran",
+        capacity: "2,000",
+        year: "1888 CE",
+        category: "Historic",
+        icon: "fa-gem",
+        desc: "Famous for stained glass windows that flood the Persian rugs with an ethereal kaleidoscope of morning light.",
+        facilities: ["Stained Glass Sun Galleries", "Traditional Persian Pool", "Intricate Muqarnas Vaulting", "Tilework Gallery"]
+      },
+      {
+        id: 16,
+        name: "Crystal Mosque (Masjid Kristal)",
+        city: "Kuala Terengganu",
+        country: "Malaysia",
+        capacity: "1,500",
+        year: "2008 CE",
+        category: "Modern",
+        icon: "fa-snowflake",
+        desc: "Built on Wan Man island with steel, glass, and crystal. Illuminated at night in dazzling colors reflected across the river.",
+        facilities: ["Riverfront Promenade", "Islamic Civilization Replica Park", "Wi-Fi Connected Prayer Hall", "Illumination Night Shows"]
+      },
+      {
+        id: 17,
+        name: "Sultan Qaboos Grand Mosque",
+        city: "Muscat",
+        country: "Oman",
+        capacity: "20,000",
+        year: "2001 CE",
+        category: "Megastructure",
+        icon: "fa-shield-halved",
+        desc: "Features 300,000 tonnes of Indian sandstone, a 14-meter Italian chandelier, and an 8.5-ton hand-woven Persian rug.",
+        facilities: ["Islamic Information Center", "3-Story Library with 20,000 Books", "Landscaped Gardens", "Wudu Facilities"]
+      },
+      {
+        id: 18,
+        name: "Saint Petersburg Mosque",
+        city: "Saint Petersburg",
+        country: "Russia",
+        capacity: "5,000",
+        year: "1913 CE",
+        category: "Historic",
+        icon: "fa-snowflake",
+        desc: "Modeled after the Gur-e-Amir mausoleum in Samarkand, showcasing brilliant turquoise faience tilework.",
+        facilities: ["Turquoise Tile Dome", "Two 49-meter Minarets", "Historical Archives", "Winterized Heating System"]
+      }
+    ];
+
+    let currentCategory = 'all';
+
+    function renderMosques(list = mosques) {
+      const container = document.getElementById('mosqueGrid');
+      container.innerHTML = list.map(m => `
+        <div class="mosque-card">
+          <div class="card-banner">
+            <span class="category-tag">${m.category}</span>
+            <i class="fas ${m.icon}"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title">${m.name}</div>
+            <div class="card-location"><i class="fas fa-location-dot"></i> ${m.city}, ${m.country}</div>
+            <div class="card-desc">${m.desc}</div>
+            <div class="card-meta-row">
+              <span><i class="fas fa-users"></i> ${m.capacity}</span>
+              <span><i class="fas fa-calendar-alt"></i> Built: ${m.year}</span>
+            </div>
+            <button class="btn-detail" onclick="showMosqueDetail(${m.id})"><i class="fas fa-circle-info"></i> View Mosque Profile</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterMosques() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const filtered = mosques.filter(m => {
+        const matchesQuery = !query || 
+          m.name.toLowerCase().includes(query) ||
+          m.city.toLowerCase().includes(query) ||
+          m.country.toLowerCase().includes(query);
+        const matchesCat = currentCategory === 'all' || m.category === currentCategory;
+        return matchesQuery && matchesCat;
+      });
+      renderMosques(filtered);
+    }
+
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterMosques();
+    }
+
+    function showMosqueDetail(id) {
+      const m = mosques.find(item => item.id === id);
+      if (!m) return;
+      document.getElementById('modalMosqueName').innerText = m.name;
+      document.getElementById('modalMosqueMeta').innerText = `${m.city}, ${m.country} • Capacity: ${m.capacity} • Established: ${m.year}`;
+      document.getElementById('modalMosqueHistory').innerText = m.desc;
+      document.getElementById('modalMosqueFacilities').innerHTML = m.facilities.map(f => `<li><i class="fas fa-check" style="color:var(--teal-bright);margin-right:6px;"></i> ${f}</li>`).join('');
+      openModal('detailModal');
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      document.getElementById('themeIcon').className = next === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('mosque_theme', next);
+    }
+
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+    function acceptCookies() {
+      localStorage.setItem('mosque_cookies_accepted', 'true');
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('mosque_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.getElementById('themeIcon').className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+
+      if (localStorage.getItem('mosque_cookies_accepted') === 'true') {
+        document.getElementById('cookieBanner').style.display = 'none';
+      }
+
+      renderMosques();
+    });
+  </script>
+</body>
+</html>
