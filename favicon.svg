@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="pin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <!-- Map Pin Silhouette -->
+  <path d="M 32 8 C 21 8 13 16 13 27 C 13 40 30 54 32 56 C 34 54 51 40 51 27 C 51 16 43 8 32 8 Z" fill="url(#pin)" stroke="url(#gold)" stroke-width="1.5"/>
+  <!-- Inner White Circle -->
+  <circle cx="32" cy="27" r="14" fill="#022c22"/>
+  <!-- Mosque Dome inside Pin -->
+  <path d="M 23 35 L 41 35 L 41 31 C 41 26 36 22 32 17 C 28 22 23 26 23 31 Z" fill="url(#gold)"/>
+  <!-- Dome Arch Door -->
+  <path d="M 29 35 L 35 35 L 35 30 C 35 28 29 28 29 30 Z" fill="#022c22"/>
+  <!-- Crescent on Finial -->
+  <circle cx="32" cy="15" r="1.5" fill="#fde047"/>
+  <line x1="32" y1="16" x2="32" y2="18" stroke="#fde047" stroke-width="1"/>
+</svg>
